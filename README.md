@@ -137,7 +137,29 @@ If a code project is not hosted in a git repository for any reasons, it is best 
 
 ## File Names
 
-Pictures and Videos
+### Files from Third-Parties
+
+`<iso-date> <document-type> <document-number> <third-party-name> <description>`
+
+where:
+
+- `<iso-date>` is the document [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
+- `<document-type>` can be either `Invoice`, `Receipt`, `Order`, `Contract`, `Statement` or any other specific name,
+- (optional) `<document-number>` is the documernt number if there's one (for example the invoice number or order number),
+- `<third-party-name>` is the name of the third-party, usually a company, retailer, organisation,
+- (optional) `<description>` is a short description of the content of the document or the subject matter (for example the item purchased).
+
+### Personal Files
+
+`<iso-date> <description>`
+
+where:
+
+- (optional) `<iso-date>` is the creation [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
+- (optional) `<document-type>` is a document type, if applicable,
+- `<description>` is a short description of the content of the document or the subject matter.
+
+### Pictures and Videos
 
 Format: `yyyy-mm-dd--hh-mm-ss--camera-model-name.extension`
 
