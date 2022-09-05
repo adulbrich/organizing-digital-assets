@@ -18,10 +18,14 @@ At the root of my home folder, I have the following:
 - `Archive`
 - `Areas`
 - `Inbox`
-- `Pictures and Videos`
+- `Pictures`
 - `Projects`
 - `Resources`
 - `Work`
+
+I've added an additional `Inbox` folder for things yet to be classified, a `Pictures` folder for daily and travel pictures and videos, and a `Work` folder that also contains a PARA structure for each job.
+
+Here are the details.
 
 ### Projects
 
@@ -36,7 +40,7 @@ where:
 
 - `<iso-date>` is the [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
 - `<iso-duration>` is the [duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) starting from `<iso-date>` in the format `PnYnMnDTnHnMnS`,
-- `<project-name>` is the name of the project, it can be multiple capitalized words, separated by spaces.
+- `<project-name>` is the name of the project, e.g., multiple capitalized words, separated by spaces.
 
 The period starts with `P` followed by one or more digits (the amount of) and then the unit (`D` for days, `W` for weeks, etc.)
 
@@ -51,17 +55,17 @@ Examples:
 
 - `2021-10-22--P1W My Cool Project`
 - `2019-07-25--P2W Travel Columbia`
-- `2021-10-23--P1D Another Cool Unfinished project`
-- `2018-98-04--P3W--Travel-Iran`
+- `2021-10-23--P2M Another Cool Unfinished project`
+- `2018-98-04--P3W Travel Iran`
 
 ### Areas and Resources
 
 The `Areas` folder contains all things personal that do not have an end date, such as:
 
 - `Finance`
-  - `Taxes`: one folder per fiscal year per country, includes all documents (salary certificates, bank statements, etc.)
+  - `Taxes`: one folder per fiscal year per country, includes all documents (salary certificates, bank statements, etc.), e.g., `Taxes BE 2021`, `Taxes CH 2021`, `Taxes US 2022`.
   - `Invoices and Receipts`: all invoices or receipts from any institutions (retail or otherwise)
-  - `Admin`: all administrative documents from financial institutions that are not related to taxes (account openings and closures, terms and conditions, pension statements, etc.)
+  - `Administrative`: all administrative documents from financial institutions that are not related to taxes (account openings and closures, terms and conditions, pension statements, etc.)
 - `Insurance`
   - `<iso-date>--<iso-duration> <insurance-type> <insurer> <policy-number>`: one folder per insurance contract, with optional duration
 - `Home`
@@ -69,12 +73,13 @@ The `Areas` folder contains all things personal that do not have an end date, su
 - `Transport`
   - `<type-of-transport> <car-plate-or-chassis-or-customer-number> <alias>`: one per mode of transportation, contains all documents (contracts, certificates, etc) related to that specific transport, but insurance
 - `Education`: diplomas, certificates, etc.
-- `Identity`: everything related to passports, identity cards, household, visas, birth certificates, etc.
+- `Identity`: everything related to passports, identity cards, household composition, visas, birth certificates, embassy documents, etc.
 - `Health and Sports`: blood reports, genetics, vaccination, certificates, sport competitions, dentist reports, etc.
+- `Websites`: the different websites maintained with their assets (things not in git repository)
 - `Work`: work contracts, job descriptions, agreements, etc.
 - `Writings`
 
-The `Resources` folder contains notes, articles, books, and other references on specific topics of interest, such as (non-exhaustive list):
+The `Resources` folder contains notes, articles, books, videos, and other references on specific topics of interest, such as (non-exhaustive list):
 
 - `Aging`
 - `Breathing`
@@ -82,6 +87,7 @@ The `Resources` folder contains notes, articles, books, and other references on 
 - `Dance Lindy Hop`
 - `Dance Salsa`
 - `Data Management`
+- `Education` (special folder for everything from my studies)
 - `Leadership and Management`
 - `Medicine`
 - `Minimalism`
@@ -99,37 +105,52 @@ Notes:
 
 Pictures and videos taken as memories have their own dedicated folder structure because of the sheer amount of files.
 
-The `Pictures and Videos` folder contains sub-folders with the following structure:
+The `Pictures` folder contains sub-folders with the following structure:
 
-`<iso-date>--<iso-duration>--<alias>`
+`<iso-date>--<iso-duration> <alias>`
 
 where:
 
 - `<iso-date>` is the [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
 - (optional) `<iso-duration>` is the [duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) starting from `<iso-date>` in the format `PnYnMnDTnHnMnS`,
-- (optional) `<alias>` is the alias for that event, journey or travel, it can be multiple capitalized words, separated by dashes.
+- (optional) `<alias>` is the alias for that event, journey or travel, it can be multiple capitalized words.
 
 Examples:
 
 - `2021-02-12`
 - `2021-02-13`
-- `2018-98-04--P3W--Travel-Iran`
-- `2020-08-03--Hike-Mont-Tendre`
-- `2014-06-30--P19D--Central-Asia` (so 19 days starting on June 30, 2014)
+- `2018-98-04--P3W Travel Iran`
+- `2020-08-03 Hike Mont Tendre`
+- `2014-06-30--P19D Central Asia` (so 19 days starting on June 30, 2014)
 
 Notes:
 
-- While a travel project (e.g. `2018-98-04--P3W--Travel-Iran`) will contain all documents (such as travel passes, planning, etc.) for that specific journey, all media memories will be stored in a corresponding folder in the `Pictures and Videos` folder.
+- While a travel project (e.g. `2018-98-04--P3W Travel Iran`) will contain all documents (such as travel passes, planning, etc.) for that specific journey, all media memories will be stored in a corresponding folder in the `Pictures` folder.
 
 ### Inbox
 
-TODO
+The `Inbox` folder contains all things that are not yet classified, either because the user does not know where to put it yet, or the structure does not exists yet, or for a lack of time.
+
 ### Work
 
-TODO
+One folder per employer (might change to job description in the future). It has the following structure:
+
+`<iso-date>--<iso-duration> <employer name>`
+
+where:
+
+- `<iso-date>` is the [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
+- (optional) `<iso-duration>` is the [duration](https://en.wikipedia.org/wiki/ISO_8601#Durations) starting from `<iso-date>` in the format `PnYnMnDTnHnMnS`, empty if current job.
+- `<employer>` is the name of the employer.
+
+Ideally, each folder will contain its own PARA(I) folders: `Projects`, `Areas`, `Resources`, `Archive` (and optionally `Inbox`).
+
 ### Archive
 
-TODO
+The `Archive` folder also contains `Areas`, `Projects`, and `Ressources` folders. The items there are just out-of-date or not frequently consulted anymore.
+
+For example, once a project is done, it is moved from `Projects` to `Archive\Projects`.
+
 ### Code
 
 Code projects should be hosted in a git repository (such as Github) and not contain any spaces.
@@ -145,13 +166,13 @@ where:
 
 - `<iso-date>` is the document [date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) in the format `YYYY-MM-DD`,
 - `<document-type>` can be either `Invoice`, `Receipt`, `Order`, `Contract`, `Statement` or any other specific name,
-- (optional) `<document-number>` is the documernt number if there's one (for example the invoice number or order number),
+- (optional) `<document-number>` is the document number if there's one (for example the invoice number or order number),
 - `<third-party-name>` is the name of the third-party, usually a company, retailer, organisation,
 - (optional) `<description>` is a short description of the content of the document or the subject matter (for example the item purchased).
 
 ### Personal Files
 
-`<iso-date> <description>`
+`<iso-date> <document-type> <description>`
 
 where:
 
@@ -159,25 +180,29 @@ where:
 - (optional) `<document-type>` is a document type, if applicable,
 - `<description>` is a short description of the content of the document or the subject matter.
 
-### Pictures and Videos
+### Picture and Video Files
+
+To Do:
+
+- [ ] manage the timezone
 
 Format: `yyyy-mm-dd--hh-mm-ss--camera-model-name.extension`
 
 Relevant EXIF Tags:
 
-* Model
-* DateTimeOriginal
-* FileTypeExtension
+- Model
+- DateTimeOriginal
+- FileTypeExtension
 
 Substitutions:
 
-* semi-colons `:` by dashes `-` in DateTimeOriginal
-* spaces by dashes `-` in Model
+- semi-colons `:` by dashes `-` in DateTimeOriginal
+- spaces by dashes `-` in Model
 
 Example: `2020-11-21--19-42-10--oneplus-a5000.jpg`
 
 **What to do if the time zone is wrong?**
-Quantitatively look at the time distribution in the folder. 
+Quantitatively look at the time distribution in the folder.
 
 ## Media Toolbox
 
@@ -206,7 +231,7 @@ Finding multiple pictures taken at the same time with both phone and DSLR is the
 
 ### Correct the Time Difference (if any)
 
-The second step is to run e.g. [Exiftool](https://exiftool.org/) on the images that have the wrong times. 
+The second step is to run e.g. [Exiftool](https://exiftool.org/) on the images that have the wrong times.
 
 For example to adjust all pictures taken with a canon in the current directory by +3 hours, you can run:
 
@@ -243,5 +268,8 @@ Some phones would not store their model for videos, so I have a mapping table wi
 
 ## Storage
 
-Once all files are formatted and organized, I backup the files on an external hard drive and on a cloud backup storage (for which I have the encryption keys).
-I then upload the files to a dedicated cloud store such as Adobe Lightroom CC or Google Photos or Microsoft OneDrive.
+- Local Storage: Synology NAS (RAID)
+- Backup Local Storage: WD External Hard Drive (automatically from the NAS)
+- Cloud Storage: Infomaniak kDrive (synced with the NAS)
+- Cloud Backup: IDrive (automatically from the NAS)
+- Online Photo Editing, Organizing, Storing, and Sharing: Adobe Lightroom CC (synced on all platforms, phone included)
