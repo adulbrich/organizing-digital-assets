@@ -1,4 +1,23 @@
 
+import_files_exif <- read_exif(
+  path = import_files[]$filename_full_path,
+  tags = c(
+    "FileSize"
+    , "Model"
+    , "FileModifyDate"
+    , "DateTimeOriginal"
+    , "CreateDate"
+    , "ModifyDate" # e.g.
+    , "FileTypeExtension"
+    , "FirmwareVersion")
+)
+setDT(import_files_exif)
+
+import_files_exif[, .N, by=c("FileTypeExtension")]
+
+missing_dates <- import_files_exif[is.na(DateTimeOriginal) & is.na(CreateDate) & is.na(ModifyDate) & FileTypeExtension != "JSON", ]
+
+####
 
 folder_1 <- ""
 folder_2 <- ""

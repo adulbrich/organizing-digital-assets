@@ -10,6 +10,30 @@ Do not use underscores or spaces. Use double-dashes instead. It improves readabi
 
 Prefer lowercase, in particular for web project, because of URLs.
 
+## Tags and Labels
+
+Tags and Labels are not mutually exclusive. They are used for classifying emails or adding tags (+tag) to email adresses.
+One element can be both classified as retail, and as receipt, for example.
+
+| Label/Tag          | Description                                                     | Examples                                             |
+| ------------------ | --------------------------------------------------------------- | ---------------------------------------------------- |
+| Finance            | Banks, brokers, or financial institutions                       | Chase, Revolut, HSBC, Interactive Brokers, IRS       |
+| Insurance          | Insurance companies                                             | Lemonade, State Farms                                |
+| Retail             | Online or offline shops                                         | Patagonia, Adidas, Amazon, Market of Choice, Etsy    |
+| Newsletter         | Any newsletters                                                 | Craig Mod, HackerNews, SVPG                          |
+| Charity            | Anytime you giove to charity                                    | Wikimedia Foundation, EFF, Nature Conservancy, WWF   |
+| Travel             | Airlines, trains, hotels, activities linked to a travel project | United, Booking.com, Airbnb, TripAdvisor             |
+| Product            |                                                                 | Pocket,                                              |
+| Education          |                                                                 | Coursera, edX, Harvard                               |
+| Play               |                                                                 | Steam, GOG, Xbox, Nvidia, Epic                       |
+| Transport          | Day-to-day transport such as your car or public transport       | Dealer, DMV, Public Transport Company                |
+| Housing            | Day-to-day housing such as your house or apartment              | Landlord, Cleaning Company                           |
+| Health             |                                                                 | Hospital, MD, Laboratory,                            |
+| Lifestyle/Social   |                                                                 | IMDB, RottenTomatoes, Goodreads, LinkedIn, Instagram |
+| Friends and Family |                                                                 | N/A                                                  |
+| Receipt            |
+| Legal              |
+
 ## Folder Structure and Naming
 
 My organisation structure is losely based on the [PARA Method](https://fortelabs.co/blog/para/).
@@ -186,20 +210,23 @@ To Do:
 
 - [ ] manage the timezone
 
-Format: `yyyy-mm-dd--hh-mm-ss--camera-model-name.extension`
+Format: `YYYY-MM-DD--hh-mm-ss--camera-model--original-name.extension`
 
 Relevant EXIF Tags:
 
 - Model
 - DateTimeOriginal
+- CreateDate
+- ModifyDate
+- FileSize
 - FileTypeExtension
 
 Substitutions:
 
-- semi-colons `:` by dashes `-` in DateTimeOriginal
+- semi-colons `:` by dashes `-` in DateTimeOriginal, CreateDate, or ModifyDate
 - spaces by dashes `-` in Model
 
-Example: `2020-11-21--19-42-10--oneplus-a5000.jpg`
+Example: `2020-11-21--19-42-10--OnePlus-A5000--IMG202011211.jpg`
 
 **What to do if the time zone is wrong?**
 Quantitatively look at the time distribution in the folder.
@@ -214,7 +241,8 @@ I gathered quite a lot of images and videos over the years, from traveling to ev
 - Images taken with my phone were usually correct but on planes.
 - Sorting images by name was a struggle because they used different naming conventions.
 - Sorting by creation date was not always working because of above.
-- Videos did not store the same Exif metadata. Images would usually have a `DateTimeOriginal` while videos would have a `FileModifyDate`.
+- Videos did not store the same Exif metadata. Images would usually have a `DateTimeOriginal` while videos would have a `CreateDate` or `ModifyDate`.
+- Timestamps can be the same for example while continuous shooting.
 
 ## Methodology
 
@@ -252,17 +280,18 @@ Thirdly, I wanted to have a nice and easily readable file name. I figured I want
 - Date taken
 - Time taken
 - Model of the camera
+- Orignal name
 - File type
 
 The file name must be compatible with most file systems or cloud storages, so no special characters.
 
 I ended up choosing a modified [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formatting, to which I added the camera model:
 
-`YYYY-MM-DD--hh-mm-ss--Model.FileTypeExtension`
+`YYYY-MM-DD--hh-mm-ss--Model--SourceFileName.FileTypeExtension`
 
-It would look like this:  `2014-07-01--01-14-48--Canon-EOS-550D.JPG`
+It would look like this: `2014-07-01--01-14-48--Canon-EOS-550D--.JPG`
 
-This allowed me to sort the images and videos as well chronologically, based on file name. I would use either the `DateTimeOriginal` or `FileModifyDate` depending on what is most relevant.
+This allowed me to sort the images and videos as well chronologically, based on file name. I would use either the `DateTimeOriginal`, `CreateDate`, or `ModifyDate` depending on what is most relevant.
 
 Some phones would not store their model for videos, so I have a mapping table with the dates when I had a specific phone.
 
